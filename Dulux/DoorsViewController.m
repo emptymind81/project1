@@ -8,6 +8,7 @@
 
 #import "DoorsViewController.h"
 #import "AutoLayoutHelper.h"
+#import "RoomViewController.h"
 
 @interface DoorsViewController ()
 
@@ -38,9 +39,11 @@
    
    m_icon_image_view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"duluxicon.png"]];
    
-   m_image_view1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"seri1.png"]];
-   m_image_view2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"seri2.png"]];
-   m_image_view3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"seri3.png"]];
+   m_image_view1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"door101.png"]];
+   m_image_view2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"door102.png"]];
+   m_image_view3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"door103.png"]];
+    
+    m_image_view2.highlightedImage = [UIImage imageNamed:@"door102open.png"];
    
    m_image_views = [[NSMutableArray alloc] initWithObjects:m_icon_image_view, m_image_view1, m_image_view2, m_image_view3, nil];
    for (int i=0; i<m_image_views.count; i++)
@@ -49,7 +52,11 @@
       [self.view addSubview:view];
       view.translatesAutoresizingMaskIntoConstraints = false;
       view.contentMode = UIViewContentModeScaleToFill;
+      view.userInteractionEnabled = true;       
    }
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [m_image_view2 addGestureRecognizer:singleTap];
    
    //constraints for icon:
    [self.view addConstraint:[AutoLayoutHelper viewEqualsToAnother:m_icon_image_view another:self.view attr:NSLayoutAttributeCenterX anotherAttr:NSLayoutAttributeCenterX]];
@@ -83,6 +90,35 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) switchToRoom
+{
+    [UIView animateWithDuration:1
+                     animations:^{
+                         self.view.alpha = 0.2;
+                     }
+                     completion:^(BOOL finished){
+                         sleep(1);
+                         
+                         RoomViewController* view_controller = [[RoomViewController alloc] initWithNibName:@"RoomViewController" bundle:nil];
+                         [self.navigationController pushViewController:view_controller animated:false];
+                     }];
+
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)tapRecognizer {
+    
+    [UIView animateWithDuration:1
+                     animations:^{
+                         //m_image_view2.alpha = 0.2;
+                         m_image_view2.image = [UIImage imageNamed:@"door102open.png"];
+                     }
+                     completion:^(BOOL finished){
+                         sleep(1);
+                         
+                         [self switchToRoom];
+                     }];
 }
 
 @end

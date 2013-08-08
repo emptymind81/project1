@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B73CDBCB17B3F4640065D69F /* door101.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CDBC517B3F4640065D69F /* door101.png */; };
+		B73CDBCC17B3F4640065D69F /* door102.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CDBC617B3F4640065D69F /* door102.png */; };
+		B73CDBCD17B3F4640065D69F /* door102open.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CDBC717B3F4640065D69F /* door102open.png */; };
+		B73CDBCE17B3F4640065D69F /* door103.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CDBC817B3F4640065D69F /* door103.png */; };
+		B73CDBCF17B3F4640065D69F /* room1.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CDBC917B3F4640065D69F /* room1.png */; };
+		B73CDBD017B3F4640065D69F /* room1colored.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CDBCA17B3F4640065D69F /* room1colored.png */; };
+		B73CDBD417B3F5B80065D69F /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CDBD217B3F5B80065D69F /* RoomViewController.m */; };
+		B73CDBD517B3F5B80065D69F /* RoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B73CDBD317B3F5B80065D69F /* RoomViewController.xib */; };
 		B7898CEF17B22BBF00B1D3EC /* DoorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */; };
 		B7898CF017B22BBF00B1D3EC /* DoorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */; };
 		B7898CF317B382EC00B1D3EC /* AutoLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B7898CF217B382EC00B1D3EC /* AutoLayoutHelper.m */; };
@@ -29,6 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B73CDBC517B3F4640065D69F /* door101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = door101.png; path = resource/door101.png; sourceTree = "<group>"; };
+		B73CDBC617B3F4640065D69F /* door102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = door102.png; path = resource/door102.png; sourceTree = "<group>"; };
+		B73CDBC717B3F4640065D69F /* door102open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = door102open.png; path = resource/door102open.png; sourceTree = "<group>"; };
+		B73CDBC817B3F4640065D69F /* door103.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = door103.png; path = resource/door103.png; sourceTree = "<group>"; };
+		B73CDBC917B3F4640065D69F /* room1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room1.png; path = resource/room1.png; sourceTree = "<group>"; };
+		B73CDBCA17B3F4640065D69F /* room1colored.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room1colored.png; path = resource/room1colored.png; sourceTree = "<group>"; };
+		B73CDBD117B3F5B80065D69F /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
+		B73CDBD217B3F5B80065D69F /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
+		B73CDBD317B3F5B80065D69F /* RoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomViewController.xib; sourceTree = "<group>"; };
 		B7898CEC17B22BBF00B1D3EC /* DoorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoorsViewController.h; sourceTree = "<group>"; };
 		B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoorsViewController.m; sourceTree = "<group>"; };
 		B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoorsViewController.xib; sourceTree = "<group>"; };
@@ -105,6 +122,9 @@
 				B7898CF217B382EC00B1D3EC /* AutoLayoutHelper.m */,
 				B7898CEC17B22BBF00B1D3EC /* DoorsViewController.h */,
 				B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */,
+				B73CDBD117B3F5B80065D69F /* RoomViewController.h */,
+				B73CDBD217B3F5B80065D69F /* RoomViewController.m */,
+				B73CDBD317B3F5B80065D69F /* RoomViewController.xib */,
 				B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */,
 				B7B1223417B13A3A00A6A1D4 /* AppDelegate.h */,
 				B7B1223517B13A3B00A6A1D4 /* AppDelegate.m */,
@@ -134,6 +154,12 @@
 		B7B1225017B1427400A6A1D4 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				B73CDBC517B3F4640065D69F /* door101.png */,
+				B73CDBC617B3F4640065D69F /* door102.png */,
+				B73CDBC717B3F4640065D69F /* door102open.png */,
+				B73CDBC817B3F4640065D69F /* door103.png */,
+				B73CDBC917B3F4640065D69F /* room1.png */,
+				B73CDBCA17B3F4640065D69F /* room1colored.png */,
 				B7B1225117B143DB00A6A1D4 /* duluxicon.png */,
 				B7B1224817B1425B00A6A1D4 /* seri1.png */,
 				B7B1224917B1425B00A6A1D4 /* seri2.png */,
@@ -205,6 +231,13 @@
 				B7B1224F17B1425B00A6A1D4 /* seri4.png in Resources */,
 				B7B1225217B143DC00A6A1D4 /* duluxicon.png in Resources */,
 				B7898CF017B22BBF00B1D3EC /* DoorsViewController.xib in Resources */,
+				B73CDBCB17B3F4640065D69F /* door101.png in Resources */,
+				B73CDBCC17B3F4640065D69F /* door102.png in Resources */,
+				B73CDBCD17B3F4640065D69F /* door102open.png in Resources */,
+				B73CDBCE17B3F4640065D69F /* door103.png in Resources */,
+				B73CDBCF17B3F4640065D69F /* room1.png in Resources */,
+				B73CDBD017B3F4640065D69F /* room1colored.png in Resources */,
+				B73CDBD517B3F5B80065D69F /* RoomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +253,7 @@
 				B7B1223F17B13A3B00A6A1D4 /* ViewController.m in Sources */,
 				B7898CEF17B22BBF00B1D3EC /* DoorsViewController.m in Sources */,
 				B7898CF317B382EC00B1D3EC /* AutoLayoutHelper.m in Sources */,
+				B73CDBD417B3F5B80065D69F /* RoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
