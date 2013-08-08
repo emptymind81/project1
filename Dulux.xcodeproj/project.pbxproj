@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B7898CEF17B22BBF00B1D3EC /* DoorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */; };
+		B7898CF017B22BBF00B1D3EC /* DoorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */; };
+		B7898CF317B382EC00B1D3EC /* AutoLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B7898CF217B382EC00B1D3EC /* AutoLayoutHelper.m */; };
+		B7B1222617B13A3A00A6A1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B1222517B13A3A00A6A1D4 /* UIKit.framework */; };
+		B7B1222817B13A3A00A6A1D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B1222717B13A3A00A6A1D4 /* Foundation.framework */; };
+		B7B1222A17B13A3A00A6A1D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B1222917B13A3A00A6A1D4 /* CoreGraphics.framework */; };
+		B7B1223017B13A3A00A6A1D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7B1222E17B13A3A00A6A1D4 /* InfoPlist.strings */; };
+		B7B1223217B13A3A00A6A1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B1223117B13A3A00A6A1D4 /* main.m */; };
+		B7B1223617B13A3B00A6A1D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B1223517B13A3B00A6A1D4 /* AppDelegate.m */; };
+		B7B1223817B13A3B00A6A1D4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1223717B13A3B00A6A1D4 /* Default.png */; };
+		B7B1223A17B13A3B00A6A1D4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1223917B13A3B00A6A1D4 /* Default@2x.png */; };
+		B7B1223C17B13A3B00A6A1D4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1223B17B13A3B00A6A1D4 /* Default-568h@2x.png */; };
+		B7B1223F17B13A3B00A6A1D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B1223E17B13A3B00A6A1D4 /* ViewController.m */; };
+		B7B1224217B13A3B00A6A1D4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B1224017B13A3B00A6A1D4 /* ViewController.xib */; };
+		B7B1224C17B1425B00A6A1D4 /* seri1.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1224817B1425B00A6A1D4 /* seri1.png */; };
+		B7B1224D17B1425B00A6A1D4 /* seri2.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1224917B1425B00A6A1D4 /* seri2.png */; };
+		B7B1224E17B1425B00A6A1D4 /* seri3.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1224A17B1425B00A6A1D4 /* seri3.png */; };
+		B7B1224F17B1425B00A6A1D4 /* seri4.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1224B17B1425B00A6A1D4 /* seri4.png */; };
+		B7B1225217B143DC00A6A1D4 /* duluxicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B1225117B143DB00A6A1D4 /* duluxicon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B7898CEC17B22BBF00B1D3EC /* DoorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoorsViewController.h; sourceTree = "<group>"; };
+		B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoorsViewController.m; sourceTree = "<group>"; };
+		B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoorsViewController.xib; sourceTree = "<group>"; };
+		B7898CF117B382EB00B1D3EC /* AutoLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutHelper.h; sourceTree = "<group>"; };
+		B7898CF217B382EC00B1D3EC /* AutoLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutHelper.m; sourceTree = "<group>"; };
+		B7B1222217B13A3A00A6A1D4 /* Dulux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulux.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B1222517B13A3A00A6A1D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B7B1222717B13A3A00A6A1D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B7B1222917B13A3A00A6A1D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B7B1222D17B13A3A00A6A1D4 /* Dulux-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dulux-Info.plist"; sourceTree = "<group>"; };
+		B7B1222F17B13A3A00A6A1D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B7B1223117B13A3A00A6A1D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B7B1223317B13A3A00A6A1D4 /* Dulux-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dulux-Prefix.pch"; sourceTree = "<group>"; };
+		B7B1223417B13A3A00A6A1D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B7B1223517B13A3B00A6A1D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B7B1223717B13A3B00A6A1D4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B7B1223917B13A3B00A6A1D4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B7B1223B17B13A3B00A6A1D4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B7B1223D17B13A3B00A6A1D4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B7B1223E17B13A3B00A6A1D4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B7B1224117B13A3B00A6A1D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		B7B1224817B1425B00A6A1D4 /* seri1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seri1.png; path = resource/seri1.png; sourceTree = "<group>"; };
+		B7B1224917B1425B00A6A1D4 /* seri2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seri2.png; path = resource/seri2.png; sourceTree = "<group>"; };
+		B7B1224A17B1425B00A6A1D4 /* seri3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seri3.png; path = resource/seri3.png; sourceTree = "<group>"; };
+		B7B1224B17B1425B00A6A1D4 /* seri4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seri4.png; path = resource/seri4.png; sourceTree = "<group>"; };
+		B7B1225117B143DB00A6A1D4 /* duluxicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = duluxicon.png; path = resource/duluxicon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7B1221F17B13A3A00A6A1D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B1222617B13A3A00A6A1D4 /* UIKit.framework in Frameworks */,
+				B7B1222817B13A3A00A6A1D4 /* Foundation.framework in Frameworks */,
+				B7B1222A17B13A3A00A6A1D4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B7B1221917B13A3A00A6A1D4 = {
+			isa = PBXGroup;
+			children = (
+				B7B1222B17B13A3A00A6A1D4 /* Dulux */,
+				B7B1222417B13A3A00A6A1D4 /* Frameworks */,
+				B7B1222317B13A3A00A6A1D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B7B1222317B13A3A00A6A1D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1222217B13A3A00A6A1D4 /* Dulux.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7B1222417B13A3A00A6A1D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1222517B13A3A00A6A1D4 /* UIKit.framework */,
+				B7B1222717B13A3A00A6A1D4 /* Foundation.framework */,
+				B7B1222917B13A3A00A6A1D4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7B1222B17B13A3A00A6A1D4 /* Dulux */ = {
+			isa = PBXGroup;
+			children = (
+				B7898CF117B382EB00B1D3EC /* AutoLayoutHelper.h */,
+				B7898CF217B382EC00B1D3EC /* AutoLayoutHelper.m */,
+				B7898CEC17B22BBF00B1D3EC /* DoorsViewController.h */,
+				B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */,
+				B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */,
+				B7B1223417B13A3A00A6A1D4 /* AppDelegate.h */,
+				B7B1223517B13A3B00A6A1D4 /* AppDelegate.m */,
+				B7B1223D17B13A3B00A6A1D4 /* ViewController.h */,
+				B7B1223E17B13A3B00A6A1D4 /* ViewController.m */,
+				B7B1224017B13A3B00A6A1D4 /* ViewController.xib */,
+				B7B1225017B1427400A6A1D4 /* resource */,
+				B7B1222C17B13A3A00A6A1D4 /* Supporting Files */,
+			);
+			path = Dulux;
+			sourceTree = "<group>";
+		};
+		B7B1222C17B13A3A00A6A1D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1222D17B13A3A00A6A1D4 /* Dulux-Info.plist */,
+				B7B1222E17B13A3A00A6A1D4 /* InfoPlist.strings */,
+				B7B1223117B13A3A00A6A1D4 /* main.m */,
+				B7B1223317B13A3A00A6A1D4 /* Dulux-Prefix.pch */,
+				B7B1223717B13A3B00A6A1D4 /* Default.png */,
+				B7B1223917B13A3B00A6A1D4 /* Default@2x.png */,
+				B7B1223B17B13A3B00A6A1D4 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7B1225017B1427400A6A1D4 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				B7B1225117B143DB00A6A1D4 /* duluxicon.png */,
+				B7B1224817B1425B00A6A1D4 /* seri1.png */,
+				B7B1224917B1425B00A6A1D4 /* seri2.png */,
+				B7B1224A17B1425B00A6A1D4 /* seri3.png */,
+				B7B1224B17B1425B00A6A1D4 /* seri4.png */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7B1222117B13A3A00A6A1D4 /* Dulux */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7B1224517B13A3B00A6A1D4 /* Build configuration list for PBXNativeTarget "Dulux" */;
+			buildPhases = (
+				B7B1221E17B13A3A00A6A1D4 /* Sources */,
+				B7B1221F17B13A3A00A6A1D4 /* Frameworks */,
+				B7B1222017B13A3A00A6A1D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dulux;
+			productName = Dulux;
+			productReference = B7B1222217B13A3A00A6A1D4 /* Dulux.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7B1221A17B13A3A00A6A1D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = dangdang;
+			};
+			buildConfigurationList = B7B1221D17B13A3A00A6A1D4 /* Build configuration list for PBXProject "Dulux" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B7B1221917B13A3A00A6A1D4;
+			productRefGroup = B7B1222317B13A3A00A6A1D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7B1222117B13A3A00A6A1D4 /* Dulux */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7B1222017B13A3A00A6A1D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B1223017B13A3A00A6A1D4 /* InfoPlist.strings in Resources */,
+				B7B1223817B13A3B00A6A1D4 /* Default.png in Resources */,
+				B7B1223A17B13A3B00A6A1D4 /* Default@2x.png in Resources */,
+				B7B1223C17B13A3B00A6A1D4 /* Default-568h@2x.png in Resources */,
+				B7B1224217B13A3B00A6A1D4 /* ViewController.xib in Resources */,
+				B7B1224C17B1425B00A6A1D4 /* seri1.png in Resources */,
+				B7B1224D17B1425B00A6A1D4 /* seri2.png in Resources */,
+				B7B1224E17B1425B00A6A1D4 /* seri3.png in Resources */,
+				B7B1224F17B1425B00A6A1D4 /* seri4.png in Resources */,
+				B7B1225217B143DC00A6A1D4 /* duluxicon.png in Resources */,
+				B7898CF017B22BBF00B1D3EC /* DoorsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7B1221E17B13A3A00A6A1D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B1223217B13A3A00A6A1D4 /* main.m in Sources */,
+				B7B1223617B13A3B00A6A1D4 /* AppDelegate.m in Sources */,
+				B7B1223F17B13A3B00A6A1D4 /* ViewController.m in Sources */,
+				B7898CEF17B22BBF00B1D3EC /* DoorsViewController.m in Sources */,
+				B7898CF317B382EC00B1D3EC /* AutoLayoutHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B7B1222E17B13A3A00A6A1D4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7B1222F17B13A3A00A6A1D4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B7B1224017B13A3B00A6A1D4 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7B1224117B13A3B00A6A1D4 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7B1224317B13A3B00A6A1D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		B7B1224417B13A3B00A6A1D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7B1224617B13A3B00A6A1D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dulux/Dulux-Prefix.pch";
+				INFOPLIST_FILE = "Dulux/Dulux-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B7B1224717B13A3B00A6A1D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dulux/Dulux-Prefix.pch";
+				INFOPLIST_FILE = "Dulux/Dulux-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7B1221D17B13A3A00A6A1D4 /* Build configuration list for PBXProject "Dulux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B1224317B13A3B00A6A1D4 /* Debug */,
+				B7B1224417B13A3B00A6A1D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7B1224517B13A3B00A6A1D4 /* Build configuration list for PBXNativeTarget "Dulux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B1224617B13A3B00A6A1D4 /* Debug */,
+				B7B1224717B13A3B00A6A1D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7B1221A17B13A3A00A6A1D4 /* Project object */;
+}
