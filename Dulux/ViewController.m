@@ -14,17 +14,23 @@
 @end
 
 @implementation ViewController
+{
+    NSMutableArray* m_image_views;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
     //self.view.backgroundColor = [UIColor blueColor];
-   
-   UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-   [self.imageView1 addGestureRecognizer:singleTap];
-   
-   
+    
+    m_image_views = [[NSMutableArray alloc] initWithObjects:self.imageView1, self.imageView2, self.imageView3, self.imageView4, nil];
+    for (int i=0; i<m_image_views.count; i++)
+    {
+        UIImageView* view = m_image_views[i];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        [view addGestureRecognizer:singleTap];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,41 +63,55 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) switchToDoorsViewController:(int)seriIndex flashImageName:(NSString*)flashImageName
+{
+    CGRect bounds = self.view.bounds;
+    CGRect image_view_rect = CGRectMake(0, 0, bounds.size.width, bounds.size.height);
+    UIImageView* image_view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:flashImageName]];
+    image_view.frame = image_view_rect;
+    image_view.alpha = 0.0;
+    [self.view addSubview:image_view];
+    
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         image_view.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                         sleep(1);
+                         
+                         [image_view removeFromSuperview];
+                         
+                         DoorsViewController* view_controller = [[DoorsViewController alloc] initWithNibName:@"DoorsViewController" bundle:nil];
+                         view_controller.seriIndex = seriIndex;
+                         [self.navigationController pushViewController:view_controller animated:false];
+                         /*return;
+                          
+                          [UIView animateWithDuration:0.5 animations:^{
+                          image_view.alpha = 0.0;
+                          }
+                          completion:^(BOOL finished){
+                          //[image_view removeFromSuperview];
+                          
+                          DoorsViewController* view_controller = [[DoorsViewController alloc] initWithNibName:@"DoorsViewController" bundle:nil];
+                          [self.navigationController pushViewController:view_controller animated:false];
+                          }];*/
+                     }];
+    
+    //DoorsViewController* view_controller = [[DoorsViewController alloc] initWithNibName:@"DoorsViewController" bundle:nil];
+    //[self.navigationController pushViewController:view_controller animated:true];
+}
+
 - (void)handleTap:(UITapGestureRecognizer *)tapRecognizer {
    
-   CGRect bounds = self.view.bounds;
-   CGRect image_view_rect = CGRectMake(0, 0, bounds.size.width, bounds.size.height);
-   UIImageView* image_view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"seri1.png"]];
-   image_view.frame = image_view_rect;
-   image_view.alpha = 0.0;
-   [self.view addSubview:image_view];
-   
-   [UIView animateWithDuration:0.5
-                    animations:^{
-                       image_view.alpha = 1.0;
-                    }
-                    completion:^(BOOL finished){
-                       sleep(1);
-                       
-                       [image_view removeFromSuperview];
-                       
-                       DoorsViewController* view_controller = [[DoorsViewController alloc] initWithNibName:@"DoorsViewController" bundle:nil];
-                       [self.navigationController pushViewController:view_controller animated:false];
-                       /*return;
-                       
-                       [UIView animateWithDuration:0.5 animations:^{
-                          image_view.alpha = 0.0;
-                       }
-                        completion:^(BOOL finished){
-                           //[image_view removeFromSuperview];
-                           
-                           DoorsViewController* view_controller = [[DoorsViewController alloc] initWithNibName:@"DoorsViewController" bundle:nil];
-                           [self.navigationController pushViewController:view_controller animated:false];
-                        }];*/
-                    }];
-   
-   //DoorsViewController* view_controller = [[DoorsViewController alloc] initWithNibName:@"DoorsViewController" bundle:nil];
-   //[self.navigationController pushViewController:view_controller animated:true];
+    for (int i=0; i<m_image_views.count; i++)
+    {
+        UIImageView* view = m_image_views[i];
+        if (view == tapRecognizer.view)
+        {
+            NSString* flash_image_name = [NSString stringWithFormat:@"%@%d", @"seri", i+1];
+            [self switchToDoorsViewController:i flashImageName:flash_image_name];
+        }
+    }
 }
 
 @end
