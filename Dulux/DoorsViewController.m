@@ -52,12 +52,12 @@
       [self.view addSubview:view];
       view.translatesAutoresizingMaskIntoConstraints = false;
       view.contentMode = UIViewContentModeScaleToFill;
-      view.userInteractionEnabled = true;       
+      view.userInteractionEnabled = true;
+       
+       UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+       [view addGestureRecognizer:singleTap];
    }
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [m_image_view2 addGestureRecognizer:singleTap];
-   
    //constraints for icon:
    [self.view addConstraint:[AutoLayoutHelper viewEqualsToAnother:m_icon_image_view another:self.view attr:NSLayoutAttributeCenterX anotherAttr:NSLayoutAttributeCenterX]];
    [self.view addConstraint:[AutoLayoutHelper viewOffsetsToAnother:m_icon_image_view another:self.view attr:NSLayoutAttributeTop anotherAttr:NSLayoutAttributeTop offset:200]];
@@ -92,7 +92,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) switchToRoom
+-(void) switchToRoom:(int)roomIndex
 {
     [UIView animateWithDuration:1
                      animations:^{
@@ -102,6 +102,7 @@
                          sleep(1);
                          
                          RoomViewController* view_controller = [[RoomViewController alloc] initWithNibName:@"RoomViewController" bundle:nil];
+                         view_controller.roomIndex = roomIndex;
                          [self.navigationController pushViewController:view_controller animated:false];
                      }];
 
@@ -109,16 +110,24 @@
 
 - (void)handleTap:(UITapGestureRecognizer *)tapRecognizer {
     
-    [UIView animateWithDuration:1
-                     animations:^{
-                         //m_image_view2.alpha = 0.2;
-                         m_image_view2.image = [UIImage imageNamed:@"door102open.png"];
-                     }
-                     completion:^(BOOL finished){
-                         sleep(1);
-                         
-                         [self switchToRoom];
-                     }];
+    for (int i=0; i<m_image_views.count; i++)
+    {
+        UIImageView* view = m_image_views[i];
+        if (view == tapRecognizer.view)
+        {
+            [UIView animateWithDuration:1
+                             animations:^{
+                                 //m_image_view2.alpha = 0.2;
+                                 view.image = [UIImage imageNamed:@"door102open.png"];
+                             }
+                             completion:^(BOOL finished){
+                                 sleep(1);
+                                 
+                                 [self switchToRoom:i];
+                             }];
+        }
+    }
+
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface RoomViewController : UIViewController
 
+@property int roomIndex;
+
 @end

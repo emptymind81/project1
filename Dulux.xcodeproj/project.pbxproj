@@ -18,6 +18,8 @@
 		B7898CEF17B22BBF00B1D3EC /* DoorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */; };
 		B7898CF017B22BBF00B1D3EC /* DoorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */; };
 		B7898CF317B382EC00B1D3EC /* AutoLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B7898CF217B382EC00B1D3EC /* AutoLayoutHelper.m */; };
+		B7B0A72017B687D0001E8DAD /* UIRoundRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B0A71F17B687D0001E8DAD /* UIRoundRectView.m */; };
+		B7B0A72217B68C11001E8DAD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B0A72117B68C11001E8DAD /* QuartzCore.framework */; };
 		B7B1222617B13A3A00A6A1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B1222517B13A3A00A6A1D4 /* UIKit.framework */; };
 		B7B1222817B13A3A00A6A1D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B1222717B13A3A00A6A1D4 /* Foundation.framework */; };
 		B7B1222A17B13A3A00A6A1D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B1222917B13A3A00A6A1D4 /* CoreGraphics.framework */; };
@@ -51,6 +53,9 @@
 		B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoorsViewController.xib; sourceTree = "<group>"; };
 		B7898CF117B382EB00B1D3EC /* AutoLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutHelper.h; sourceTree = "<group>"; };
 		B7898CF217B382EC00B1D3EC /* AutoLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutHelper.m; sourceTree = "<group>"; };
+		B7B0A71E17B687D0001E8DAD /* UIRoundRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRoundRectView.h; sourceTree = "<group>"; };
+		B7B0A71F17B687D0001E8DAD /* UIRoundRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIRoundRectView.m; sourceTree = "<group>"; };
+		B7B0A72117B68C11001E8DAD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B7B1222217B13A3A00A6A1D4 /* Dulux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B1222517B13A3A00A6A1D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B7B1222717B13A3A00A6A1D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B0A72217B68C11001E8DAD /* QuartzCore.framework in Frameworks */,
 				B7B1222617B13A3A00A6A1D4 /* UIKit.framework in Frameworks */,
 				B7B1222817B13A3A00A6A1D4 /* Foundation.framework in Frameworks */,
 				B7B1222A17B13A3A00A6A1D4 /* CoreGraphics.framework in Frameworks */,
@@ -91,6 +97,7 @@
 		B7B1221917B13A3A00A6A1D4 = {
 			isa = PBXGroup;
 			children = (
+				B7B0A72117B68C11001E8DAD /* QuartzCore.framework */,
 				B7B1222B17B13A3A00A6A1D4 /* Dulux */,
 				B7B1222417B13A3A00A6A1D4 /* Frameworks */,
 				B7B1222317B13A3A00A6A1D4 /* Products */,
@@ -124,6 +131,8 @@
 				B7898CED17B22BBF00B1D3EC /* DoorsViewController.m */,
 				B73CDBD117B3F5B80065D69F /* RoomViewController.h */,
 				B73CDBD217B3F5B80065D69F /* RoomViewController.m */,
+				B7B0A71E17B687D0001E8DAD /* UIRoundRectView.h */,
+				B7B0A71F17B687D0001E8DAD /* UIRoundRectView.m */,
 				B73CDBD317B3F5B80065D69F /* RoomViewController.xib */,
 				B7898CEE17B22BBF00B1D3EC /* DoorsViewController.xib */,
 				B7B1223417B13A3A00A6A1D4 /* AppDelegate.h */,
@@ -254,6 +263,7 @@
 				B7898CEF17B22BBF00B1D3EC /* DoorsViewController.m in Sources */,
 				B7898CF317B382EC00B1D3EC /* AutoLayoutHelper.m in Sources */,
 				B73CDBD417B3F5B80065D69F /* RoomViewController.m in Sources */,
+				B7B0A72017B687D0001E8DAD /* UIRoundRectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,4 +10,5 @@
 
 @interface DoorsViewController : UIViewController
 
+@property int seriIndex;
 @end
