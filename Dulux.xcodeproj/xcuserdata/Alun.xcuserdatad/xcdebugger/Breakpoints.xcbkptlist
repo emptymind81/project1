@@ -34,12 +34,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Dulux/RoomViewController.m"
-         timestampString = "398340550.798887"
+         timestampString = "398408577.994704"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "228"
-         endingLineNumber = "228"
+         startingLineNumber = "258"
+         endingLineNumber = "258"
          landmarkName = "-shareToSinaWeibo:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Dulux/RoomViewController.m"
+         timestampString = "398408577.994704"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "198"
+         endingLineNumber = "198"
+         landmarkName = "-getOneKeyShareList"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

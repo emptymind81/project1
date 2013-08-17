@@ -30,6 +30,8 @@
     NSMutableArray* m_button_views;
     NSMutableArray* m_colors;
     NSMutableArray* m_colored_room_picture_names;
+    
+    AppDelegate* m_app_delegate;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,6 +87,8 @@
                                     nil];
             m_room_picture_name = @"room1";
         }
+        
+        m_app_delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
     }
     return self;
 }
@@ -140,11 +144,26 @@
     [self.view addConstraint:[AutoLayoutHelper viewEqualsToNumber:m_image_view_room number:400 attr:NSLayoutAttributeWidth]];
     [self.view addConstraint:[AutoLayoutHelper viewEqualsToNumber:m_image_view_room number:250 attr:NSLayoutAttributeHeight]];
 
-   UIButton* sina_weibo_button = [[UIButton alloc] init];
-   sina_weibo_button.frame = CGRectMake(0, 0, 60, 30);
-   [sina_weibo_button setTitle:@"SinaWeibo" forState:UIControlStateNormal];
-   [sina_weibo_button addTarget:self action:@selector(shareToSinaWeibo:) forControlEvents:UIControlEventTouchUpInside];
-   [self.view addSubview:sina_weibo_button];
+    UIButton* sina_weibo_button = [[UIButton alloc] init];
+    sina_weibo_button.frame = CGRectMake(0, 0, 150, 30);
+    sina_weibo_button.backgroundColor = [UIColor grayColor];
+    [sina_weibo_button setTitle:@"Sina Weibo" forState:UIControlStateNormal];
+    [sina_weibo_button addTarget:self action:@selector(shareToSinaWeibo:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sina_weibo_button];
+    
+    UIButton* tencent_weibo_button = [[UIButton alloc] init];
+    tencent_weibo_button.frame = CGRectMake(160, 0, 150, 30);
+    tencent_weibo_button.backgroundColor = [UIColor grayColor];
+    [tencent_weibo_button setTitle:@"Tencent Weibo" forState:UIControlStateNormal];
+    [tencent_weibo_button addTarget:self action:@selector(shareToTencentWeibo:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:tencent_weibo_button];
+    
+    UIButton* renren_weibo_button = [[UIButton alloc] init];
+    renren_weibo_button.frame = CGRectMake(320, 0, 150, 30);
+    renren_weibo_button.backgroundColor = [UIColor grayColor];
+    [renren_weibo_button setTitle:@"RenRen" forState:UIControlStateNormal];
+    [renren_weibo_button addTarget:self action:@selector(shareToRenRenWeibo:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:renren_weibo_button];
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,10 +186,47 @@
     }
 }
 
+-(id) getOneKeyShareList
+{
+    NSMutableArray* array = [[NSMutableArray alloc] initWithObjects:
+                             SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
+                             SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
+                             SHARE_TYPE_NUMBER(ShareTypeRenren),
+                             nil];
+    return array;
+                              
+    /*NSMutableArray* array = [[NSMutableArray alloc] initWithObjects:
+                             
+                             [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
+                              @"type",
+                              [NSNumber numberWithBool:NO],
+                              @"selected",
+                              nil],
+                             
+                             [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
+                              @"type",
+                              [NSNumber numberWithBool:NO],
+                              @"selected",
+                              nil],
+                             
+                             [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                              SHARE_TYPE_NUMBER(ShareTypeRenren),
+                              @"type",
+                              [NSNumber numberWithBool:NO],
+                              @"selected",
+                              nil],
+                             
+                             nil];
+    
+    
+    
+    return array;*/
+}
+
 - (void) shareToSinaWeibo:(id)sender
 {
-   AppDelegate* _appDelegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-   
    //创建分享内容
    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"room1colored" ofType:@"png"];
    id<ISSContent> publishContent = [ShareSDK content:@"test1"
@@ -189,7 +245,7 @@
                                                         allowCallback:YES
                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
                                                          viewDelegate:nil
-                                              authManagerViewDelegate:_appDelegate.viewDelegate];
+                                              authManagerViewDelegate:m_app_delegate.viewDelegate];
    //在授权页面中添加关注官方微博
    /*[authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
     [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
@@ -205,13 +261,13 @@
                      statusBarTips:YES
                        authOptions:authOptions
                       shareOptions:[ShareSDK defaultShareOptionsWithTitle:nil
-                                                          oneKeyShareList:nil//[NSArray defaultOneKeyShareList]
+                                                          oneKeyShareList:[self getOneKeyShareList]//nil//[NSArray defaultOneKeyShareList]
                                                            qqButtonHidden:YES
                                                     wxSessionButtonHidden:YES
                                                    wxTimelineButtonHidden:YES
                                                      showKeyboardOnAppear:NO
-                                                        shareViewDelegate:_appDelegate.viewDelegate
-                                                      friendsViewDelegate:_appDelegate.viewDelegate
+                                                        shareViewDelegate:m_app_delegate.viewDelegate
+                                                      friendsViewDelegate:m_app_delegate.viewDelegate
                                                     picViewerViewDelegate:nil]
                             result:^(ShareType type, SSPublishContentState state, id<ISSStatusInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
                                if (state == SSPublishContentStateSuccess)
@@ -223,52 +279,119 @@
                                   NSLog(@"发布失败!error code == %d, error code == %@", [error errorCode], [error errorDescription]);
                                }
                             }];
-   
-   /*
-   
-   
-   id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
-                                                        allowCallback:YES
-                                                        authViewStyle:SSAuthViewStyleFullScreenPopup
-                                                         viewDelegate:nil
-                                              authManagerViewDelegate:_appDelegate.viewDelegate];
-   
-   //在授权页面中添加关注官方微博
-   [authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
-                                   [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                   SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
-                                   [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
-                                   SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
-                                   nil]];
-   
-   [ShareSDK followUserWithType:ShareTypeTencentWeibo
-                          field:@"ShareSDK"
-                      fieldType:SSUserFieldTypeName
-                    authOptions:authOptions
-                   viewDelegate:_appDelegate.viewDelegate
-                         result:^(SSResponseState state, id<ISSUserInfo> userInfo, id<ICMErrorInfo> error) {
-                            NSString *msg = nil;
-                            if (state == SSResponseStateSuccess)
-                            {
-                               msg = @"关注成功";
-                            }
-                            else if (state == SSResponseStateFail)
-                            {
-                               msg = [NSString stringWithFormat:@"关注失败:%@", error.errorDescription];
-                            }
-                            
-                            if (msg)
-                            {
-                               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                                                   message:msg
-                                                                                  delegate:nil
-                                                                         cancelButtonTitle:@"知道了"
-                                                                         otherButtonTitles:nil];
-                               [alertView show];
-                            }
-                         }];
-    */
 }
 
+- (void) shareToTencentWeibo:(id)sender
+{
+    //创建分享内容
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"room1colored" ofType:@"png"];
+    id<ISSContent> publishContent = [ShareSDK content:@"test1"
+                                       defaultContent:@""
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:nil
+                                                  url:nil
+                                          description:nil
+                                            mediaType:SSPublishContentMediaTypeText];
+    
+    //创建弹出菜单容器
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
+    
+    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
+                                                         allowCallback:YES
+                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
+                                                          viewDelegate:nil
+                                               authManagerViewDelegate:m_app_delegate.viewDelegate];
+    //在授权页面中添加关注官方微博
+    /*[authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
+     [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+     SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
+     [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+     SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
+     nil]];*/
+    
+    //显示分享菜单
+    [ShareSDK showShareViewWithType:ShareTypeTencentWeibo
+                          container:container
+                            content:publishContent
+                      statusBarTips:YES
+                        authOptions:authOptions
+                       shareOptions:[ShareSDK defaultShareOptionsWithTitle:nil
+                                                           oneKeyShareList:[self getOneKeyShareList]//nil//[NSArray defaultOneKeyShareList]
+                                                            qqButtonHidden:YES
+                                                     wxSessionButtonHidden:YES
+                                                    wxTimelineButtonHidden:YES
+                                                      showKeyboardOnAppear:NO
+                                                         shareViewDelegate:m_app_delegate.viewDelegate
+                                                       friendsViewDelegate:m_app_delegate.viewDelegate
+                                                     picViewerViewDelegate:nil]
+                             result:^(ShareType type, SSPublishContentState state, id<ISSStatusInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                 if (state == SSPublishContentStateSuccess)
+                                 {
+                                     NSLog(@"发表成功");
+                                 }
+                                 else if (state == SSPublishContentStateFail)
+                                 {
+                                     NSLog(@"发布失败!error code == %d, error code == %@", [error errorCode], [error errorDescription]);
+                                 }
+                             }];
+}
 
+- (void) shareToRenRenWeibo:(id)sender
+{
+    //创建分享内容
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"room1colored" ofType:@"png"];
+    id<ISSContent> publishContent = [ShareSDK content:@"test1"
+                                       defaultContent:@""
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:@"ShareSDK"
+                                                  url:@"http://www.sharesdk.cn"
+                                          description:@"Hello 人人网"
+                                            mediaType:SSPublishContentMediaTypeText];
+    
+    //创建弹出菜单容器
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
+    
+    id<ISSAuthOptions> authOptions = [ShareSDK authOptionsWithAutoAuth:YES
+                                                         allowCallback:YES
+                                                         authViewStyle:SSAuthViewStyleFullScreenPopup
+                                                          viewDelegate:nil
+                                               authManagerViewDelegate:m_app_delegate.viewDelegate];
+    //在授权页面中添加关注官方微博
+    /*[authOptions setFollowAccounts:[NSDictionary dictionaryWithObjectsAndKeys:
+     [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+     SHARE_TYPE_NUMBER(ShareTypeSinaWeibo),
+     [ShareSDK userFieldWithType:SSUserFieldTypeName value:@"ShareSDK"],
+     SHARE_TYPE_NUMBER(ShareTypeTencentWeibo),
+     nil]];*/
+    
+    //显示分享菜单
+    [ShareSDK showShareViewWithType:ShareTypeRenren
+                          container:container
+                            content:publishContent
+                      statusBarTips:YES
+                        authOptions:authOptions
+                       shareOptions:[ShareSDK defaultShareOptionsWithTitle:nil
+                                                           oneKeyShareList:[self getOneKeyShareList]//[NSArray defaultOneKeyShareList]
+                                                            qqButtonHidden:YES
+                                                     wxSessionButtonHidden:YES
+                                                    wxTimelineButtonHidden:YES
+                                                      showKeyboardOnAppear:NO
+                                                         shareViewDelegate:m_app_delegate.viewDelegate
+                                                       friendsViewDelegate:m_app_delegate.viewDelegate
+                                                     picViewerViewDelegate:nil]
+                             result:^(ShareType type, SSPublishContentState state, id<ISSStatusInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                 if (state == SSPublishContentStateSuccess)
+                                 {
+                                     NSLog(@"发表成功");
+                                 }
+                                 else if (state == SSPublishContentStateFail)
+                                 {
+                                     NSLog(@"发布失败!error code == %d, error code == %@", [error errorCode], [error errorDescription]);
+                                 }
+                             }];
+    
+    
+}
 @end

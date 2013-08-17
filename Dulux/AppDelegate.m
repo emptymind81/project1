@@ -20,7 +20,7 @@
     注册SDK应用，此应用请到http://www.sharesdk.cn中进行注册申请。
     此方法必须在启动时调用，否则会限制SDK的使用。
     **/
-   [ShareSDK registerApp:@"api20"];
+   [ShareSDK registerApp:@"7779bce032c"];
    
    //如果使用服务中配置的app信息，请把初始化代码改为下面的初始化方法。
    //    [ShareSDK registerApp:@"api20" useAppTrusteeship:YES];
@@ -88,18 +88,18 @@
     连接新浪微博开放平台应用以使用相关功能，此应用需要引用SinaWeiboConnection.framework
     http://open.weibo.com上注册新浪微博开放平台应用，并将相关信息填写到以下字段
     **/
-   [ShareSDK connectSinaWeiboWithAppKey:@"568898243"
-                              appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
-                            redirectUri:@"http://www.sharesdk.cn"];
+   [ShareSDK connectSinaWeiboWithAppKey:@"1181359548"
+                              appSecret:@"de330123e67881dbb8941eaa377eeaf0"
+                            redirectUri:@"http://dulux.com"];
    /**
     连接腾讯微博开放平台应用以使用相关功能，此应用需要引用TencentWeiboConnection.framework
     http://dev.t.qq.com上注册腾讯微博开放平台应用，并将相关信息填写到以下字段
     
     如果需要实现SSO，需要导入libWeiboSDK.a，并引入WBApi.h，将WBApi类型传入接口
     **/
-   [ShareSDK connectTencentWeiboWithAppKey:@"801307650"
-                                 appSecret:@"ae36f4ee3946e1cbb98d6965b0b2ff5c"
-                               redirectUri:@"http://www.sharesdk.cn"
+   [ShareSDK connectTencentWeiboWithAppKey:@"801402304"
+                                 appSecret:@"4e3f1866cbffcb3e8600c38d55bb8a2d"
+                               redirectUri:@"http://dulux.com"
                                   wbApiCls:[WBApi class]];
    /**
     连接QQ空间应用以使用相关功能，此应用需要引用QZoneConnection.framework
@@ -138,9 +138,9 @@
     连接人人网应用以使用相关功能，此应用需要引用RenRenConnection.framework
     http://dev.renren.com上注册人人网开放平台应用，并将相关信息填写到以下字段
     **/
-   [ShareSDK connectRenRenWithAppId:@"226427"
-                             appKey:@"fc5b8aed373c4c27a05b712acba0f8c3"
-                          appSecret:@"f29df781abdd4f49beca5a2194676ca4"
+   [ShareSDK connectRenRenWithAppId:@"240068"
+                             appKey:@"e1834b8353e64f429eb34e4bc6288d51"
+                          appSecret:@"ef502b855f50444e89fcd6a0bbaaf377"
                   renrenClientClass:[RennClient class]];
    /**
     连接开心网应用以使用相关功能，此应用需要引用KaiXinConnection.framework
